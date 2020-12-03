@@ -1,0 +1,13 @@
+.searchForm__input {
+  width: 495px;
+  height: 62px;
+  border: none;
+  border-radius: 100px;
+  margin-right: -63px;
+  outline: none;
+}
+@media all and (max-width: 562px) {
+  .searchForm__input {
+    width: 288px;
+  }
+}

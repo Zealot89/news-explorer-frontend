@@ -1,0 +1,14 @@
+@import url("./__container/savedNewsHeader__container.css");
+@import url("./__subtitle/savedNewsHeader__subtitle.css");
+@import url(".//__text/savedNewsHeader__text.css");
+@import url("./__title/savedNewsHeader__title.css");
+.savedNewsHeader {
+  max-width: 100%;
+  height: 80px;
+  color: black;
+  background-position: top;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.71);
+}

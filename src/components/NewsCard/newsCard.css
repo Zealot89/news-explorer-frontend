@@ -1,0 +1,31 @@
+@import url("./__image/newsCard__image.css");
+@import url("./__button-container/newsCard__button-container.css");
+@import url("./__text-container/newsCard__text-container.css");
+@import url("./__button-message/newsCard__button-message.css");
+@import url("./__button/newsCard__button.css");
+@import url("./__date/newsCard__date.css");
+@import url("./__source/newsCard__source.css");
+@import url("./__subtitle/newsCard__subtitle.css");
+@import url("./__title/newsCard__title.css");
+@import url("./__tag/newsCard__tag.css");
+@import url("./__button/_trash/newsCard__button_trash.css");
+.newsCard {
+  max-width: 400px;
+  height: 567px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.newsCard:hover {
+  cursor: url("../../images/Pointer.png"), pointer;
+}
+@media all and (max-width: 860px) {
+  .newsCard {
+    height: 420px;
+  }
+}
+@media all and (max-width: 500px) {
+  .newsCard {
+    max-width: 100%;
+  }
+}

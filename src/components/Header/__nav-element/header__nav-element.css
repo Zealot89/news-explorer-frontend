@@ -1,0 +1,35 @@
+.header__nav-element {
+  position: relative;
+  padding: 0;
+  margin-right: 32px;
+  width: 69px;
+  height: 24px;
+  text-decoration: none;
+}
+
+.header__nav-element::after {
+  position: absolute;
+  bottom: -31px;
+  left: 0;
+  display: block;
+  width: 100%;
+  content: "";
+  border-top: 3px solid rgb(255, 255, 255);
+}
+.header__nav-element:hover {
+  opacity: 0.7;
+  cursor: url("../../../images/Pointer.png"), pointer;
+}
+@media all and (max-width: 860px) {
+  .header__nav-element {
+    margin-right: 16px;
+  }
+}
+@media all and (max-width: 694px) {
+  .header__nav-element {
+    width: 167px;
+  }
+  .header__nav-element::after {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+.about__subtitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  overflow: hidden;
+}
+@media all and (max-width: 860px) {
+  .about__subtitle {
+    max-width: 424px;
+    max-height: 192px;
+    margin-right: 40px;
+  }
+}
+@media all and (max-width: 562px) {
+  .about__subtitle {
+    max-height: 288px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 23px;
+  }
+}

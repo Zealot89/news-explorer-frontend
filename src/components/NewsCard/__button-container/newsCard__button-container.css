@@ -1,0 +1,12 @@
+.newsCard__button-container {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+}
+@media all and (max-width: 860px) {
+  .newsCard__button-container {
+    top: 8px;
+    right: 8px;
+  }
+}

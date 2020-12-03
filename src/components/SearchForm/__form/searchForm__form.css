@@ -1,0 +1,19 @@
+.searchForm__form {
+  max-width: 608px;
+  height: 64px;
+  display: flex;
+}
+@media all and (max-width: 860px) {
+  .searchForm__form {
+    max-width: 452px;
+    padding-left: 59px;
+  }
+}
+@media all and (max-width: 562px) {
+  .searchForm__form {
+    max-width: 288px;
+    padding-left: 0;
+    height: 146px;
+    flex-direction: column;
+  }
+}

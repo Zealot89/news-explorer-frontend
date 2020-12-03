@@ -1,0 +1,18 @@
+.header__logo {
+  width: 200px;
+  height: 24px;
+  margin: 30px auto 26px 104px;
+  object-fit: contain;
+  z-index: 2;
+}
+@media all and (max-width: 860px) {
+  .header__logo {
+    margin: 30px auto 26px 40px;
+  }
+}
+@media all and (max-width: 400px) {
+  .header__logo {
+    margin: 16px auto 16px 16px;
+    width: 117px;
+  }
+}
