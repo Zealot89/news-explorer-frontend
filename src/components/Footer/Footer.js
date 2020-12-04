@@ -32,12 +32,12 @@ function Footer() {
           className="footer__icon footer__icon_gh"
           href="https://github.com/Zealot89"
           target="_blank"
-        ></a></li>
+        > </a></li>
         <li className="footer__social-item"><a
           className="footer__icon footer__icon_vk"
           href="https://vk.com/zealot89"
           target="_blank"
-        ></a></li>
+        > </a></li>
       </ul>
     </section>
   );
