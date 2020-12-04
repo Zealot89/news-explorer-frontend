@@ -7,6 +7,7 @@
   font-size: 16px;
   line-height: 24px;
   text-align: center;
+  display: flex;
 }
 @media all and (max-width: 694px) {
   .header__nav {

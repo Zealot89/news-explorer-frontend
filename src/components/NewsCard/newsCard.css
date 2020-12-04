@@ -11,21 +11,11 @@
 @import url("./__button/_trash/newsCard__button_trash.css");
 .newsCard {
   max-width: 400px;
-  height: 567px;
+  height: 100%;
   position: relative;
   border-radius: 15px;
   overflow: hidden;
 }
 .newsCard:hover {
   cursor: url("../../images/Pointer.png"), pointer;
-}
-@media all and (max-width: 860px) {
-  .newsCard {
-    height: 420px;
-  }
-}
-@media all and (max-width: 500px) {
-  .newsCard {
-    max-width: 100%;
-  }
 }

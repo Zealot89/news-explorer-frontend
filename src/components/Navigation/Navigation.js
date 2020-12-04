@@ -36,8 +36,8 @@ function Navigation({openPopup,isOpen}) {
   return (
     <nav className={ isOpen ? `navigation navigation__visible ${backClass}` : `navigation `}>
       <ul className="header__nav">
-        <Link className={`header__nav-element ${colorClass} ${afterColorClass} ${afterMainInvisibleClass}`} to="/">Главная</Link>
-        <Link className={`header__nav-element ${colorClass} ${afterColorClass} ${afterArticlesInvisibleClass}`} to="/saved-news">Сохраненные статьи</Link>
+        <li><Link className={`header__nav-element ${colorClass} ${afterColorClass} ${afterMainInvisibleClass}`} to="/">Главная</Link></li>
+        <li><Link className={`header__nav-element ${colorClass} ${afterColorClass} ${afterArticlesInvisibleClass}`} to="/saved-news">Сохраненные статьи</Link></li>
       </ul>
       <button className={`header__button ${colorClass} ${colorBorderClass}`} onClick={openPopup} >
         Авторизоваться

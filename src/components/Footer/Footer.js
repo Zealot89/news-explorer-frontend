@@ -28,16 +28,16 @@ function Footer() {
         </li>
       </ul>
       <ul className="footer__social">
-        <a
+        <li className="footer__social-item"><a
           className="footer__icon footer__icon_gh"
           href="https://github.com/Zealot89"
           target="_blank"
-        ></a>
-        <a
+        ></a></li>
+        <li className="footer__social-item"><a
           className="footer__icon footer__icon_vk"
           href="https://vk.com/zealot89"
           target="_blank"
-        ></a>
+        ></a></li>
       </ul>
     </section>
   );
