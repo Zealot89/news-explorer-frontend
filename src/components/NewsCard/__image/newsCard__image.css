@@ -1,11 +1,12 @@
 .newsCard__image {
   width: 100%;
+  min-height: 272px;
   height: 272px;
-  object-fit: cover;
+  object-fit: fill;
   margin-bottom: -4px;
 }
 @media all and (max-width: 860px) {
   .newsCard__image {
-    height: 150px;
+    min-height: 150px;
   }
 }

@@ -1,32 +1,66 @@
 import React from "react";
 import NewsCard from "../NewsCard/NewsCard.js";
-import {  useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
-
-function NewsCardList() {
-    const { pathname } = useLocation();
+function NewsCardList({
+  articles,
+  handleShowMore,
+  isShowMoreBtn,
+  AddAndRemove,
+  loggedIn,
+}) {
+  const { pathname } = useLocation();
 
   const invisibleClass = `${
-    pathname === '/saved-news'
-      ? 'newsCardList__invisible'
-      : ''
+    pathname === "/saved-news" ? "newsCardList__invisible" : ""
+  }`;
+  const showMoreInvisibleClass = `${
+    isShowMoreBtn === false ? "newsCardList__invisible" : ""
   }`;
 
-return(
+  return (
     <section className="newsCardList">
-    <h2 className={`newsCardList__title ${invisibleClass}`}>Результаты поиска</h2>
-    <ul className="newsCardList__list">
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
-    </ul>
-    <button className={`newsCardList__button ${invisibleClass}`}>Показать еще  </button>
-</section>
-)
-
+      <h2 className={`newsCardList__title ${invisibleClass}`}>
+        Результаты поиска
+      </h2>
+      {pathname === "/" && (
+        <ul className="newsCardList__list">
+          {articles.map(({ ...props }, index) => (
+            <NewsCard
+              {...props}
+              key={index.toString()}
+              AddAndRemove={AddAndRemove}
+              loggedIn={loggedIn}
+            />
+          ))}
+        </ul>
+      )}
+      {pathname === "/saved-news" && (
+        <ul className="newsCardList__list">
+          {articles.map(({ ...props }, index) => (
+            <NewsCard
+              {...props}
+              key={index.toString()}
+              AddAndRemove={AddAndRemove}
+              loggedIn={loggedIn}
+              title={props.title}
+              description={props.description}
+              url={props.link}
+              urlToImage={props.image}
+              publishedAt={props.date}
+              source={props.souce}
+              keyword={props.keyword}
+            />
+          ))}
+        </ul>
+      )}
+      <button
+        className={`newsCardList__button ${invisibleClass} ${showMoreInvisibleClass}`}
+        onClick={handleShowMore}
+      >
+        Показать еще{" "}
+      </button>
+    </section>
+  );
 }
 export default NewsCardList;

@@ -27,6 +27,7 @@
 @import url("./__infoTooltip-image/popup__infoTooltip-image.css");
 @import url("./__infoTooltip-text/popup__infoTooltip-text.css");
 @import url("./__input-name/popup__input-name.css");
+@import url("./__tooltip/popup__tooltip.css");
 
 .popup {
   width: 100%;

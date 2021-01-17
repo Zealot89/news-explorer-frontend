@@ -2,7 +2,7 @@
   padding: 16px 24px 24px 24px;
   box-sizing: border-box;
   background-color: white;
-  max-height: 295px;
+  min-height: 295px;
   display: flex;
   flex-direction: column;
 }

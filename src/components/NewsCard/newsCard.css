@@ -2,6 +2,7 @@
 @import url("./__button-container/newsCard__button-container.css");
 @import url("./__text-container/newsCard__text-container.css");
 @import url("./__button-message/newsCard__button-message.css");
+@import url("./__button-message/_visible/newsCard__button-message_visible.css");
 @import url("./__button/newsCard__button.css");
 @import url("./__date/newsCard__date.css");
 @import url("./__source/newsCard__source.css");

@@ -4,6 +4,7 @@
 @import url("./__nav/header__nav.css");
 @import url("./__nav-element/_black/header__nav-element_black.css");
 @import url("./__nav-element/_invisible/header__nav-element_invisible.css");
+@import url("./__button/_image/header__button_image.css");
 .header {
   max-width: 100%;
   height: 80px;
