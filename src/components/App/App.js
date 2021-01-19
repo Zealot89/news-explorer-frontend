@@ -11,19 +11,13 @@ import InfoToolTip from "../InfoToolTip/InfiToolTip";
 import PopupLogin from "../PopupLogin/PopupLogin";
 import PopupRegister from "../PopupRegister/PopupRegister";
 import CurrentUserContext from "../../context/CurrentUserContext.js";
-import {
-  Route,
-  Switch,
-  //Redirect,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
+import { Route, Switch, useHistory, useLocation } from "react-router-dom";
 import MainApi from "../../utils/MainApi/MainApi";
 import newsApi from "../../utils/NewsApi/NewsApi";
 
 function App() {
   //
-  const [currentUser, setCurrentUser] = React.useState({});
+  const [currentUser, setCurrentUser] = React.useState("");
   const [isPopupLogin, setIsPopupLogin] = React.useState(false);
   const [isPopupRegister, setIsPopupRegister] = React.useState(false);
   const [isNavOpen, setIsNavOpen] = React.useState(false);
@@ -144,11 +138,18 @@ function App() {
     MainApi.authorization(email, password)
       .then((data) => {
         if (data.token) {
-          setCurrentUser(data);
-          setLoggedIn(true);
+          MainApi.getUser(data.token)
+            .then((res) => {
+              setCurrentUser(res.name);
+              setLoggedIn(true);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+
           setInfoTooltipData({
             text: "Вы вошли",
-            title: "Молодцом! ",
+            title: "",
           });
           closeAllPopups();
           openTooltip();
@@ -177,7 +178,7 @@ function App() {
   }
 
   function checkToken() {
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     if (token) {
       MainApi.getUser(token).then((res) => {
         if (res) {
@@ -213,7 +214,7 @@ function App() {
 
   //Авторизация при загрузке страницы
   React.useEffect(() => {
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     if (token) {
       MainApi.getUser(token)
         .then((res) => {
@@ -221,7 +222,7 @@ function App() {
             return Promise.reject("Unauthorized");
           } else {
             setLoggedIn(true);
-            setCurrentUser(res.name);
+            setCurrentUser(res.name.toString());
 
             location.pathname === "/saved-news"
               ? history.push("/saved-news")
@@ -239,7 +240,7 @@ function App() {
 
   //Сохранение и удаление карточки
   const articleAddAndRemove = (article) => {
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     const artReq = {
       keyword: article.keyword,
       title: article.title,
@@ -285,7 +286,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
     MainApi.getArticles(token)
       .then((articles) => {
@@ -299,7 +300,7 @@ function App() {
 
   //Запись тегов в локальное хранилище
   React.useEffect(() => {
-    let token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     loggedIn &&
       MainApi.getArticles(token).then((res) => {
         if (res) {
@@ -340,21 +341,7 @@ function App() {
       document.removeEventListener("keydown", handleEsc);
     };
   }, [isPopupLogin, isPopupRegister]);
-  //<Route path="/saved-news">
-  //           <SavedNewsHeader
-  //             loggedIn={loggedIn}
-  //             username={currentUser}
-  //             savedArticles={savedArticles}
-  //             openPopup={handleAddPlaceClick}
-  //             openNav={handleNavOpen}
-  //             isOpen={isNavOpen}
-  //           />
-  //           <SavedNews
-  //             articles={savedArticles}
-  //             loggedIn={loggedIn}
-  //             AddAndRemove={articleAddAndRemove}
-  //           />
-  //         </Route>
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -378,6 +365,8 @@ function App() {
               onSearchArticles={handleArticlesSearch}
               articles={articles}
               handleShowMore={handleShowMore}
+              savedArticles={savedArticles}
+              openPopup={handleAddPlaceClick}
             />
           </Route>
 
@@ -393,6 +382,7 @@ function App() {
             isOpen={isNavOpen}
             articles={savedArticles}
             AddAndRemove={articleAddAndRemove}
+            signOut={signOut}
           />
         </Switch>
         <Footer />

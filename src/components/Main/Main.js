@@ -14,6 +14,8 @@ function Main({
   isNotFound,
   AddAndRemove,
   loggedIn,
+  savedArticles,
+  openPopup,
 }) {
   return (
     <main>
@@ -26,6 +28,8 @@ function Main({
           articles={articles}
           handleShowMore={handleShowMore}
           isShowMoreBtn={isShowMoreBtn}
+          savedArticles={savedArticles}
+          openPopup={openPopup}
         />
       )}
       {isNotFound && <NotFound />}

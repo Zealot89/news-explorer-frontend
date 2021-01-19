@@ -9,6 +9,7 @@ function SavedNewsHeader({
   isOpen,
   username,
   savedArticles,
+  signOut,
 }) {
   const { pathname } = useLocation();
 
@@ -45,7 +46,12 @@ function SavedNewsHeader({
     <>
       <header className="savedNewsHeader">
         <img className="header__logo" src={logo} alt="" />
-        <Navigation openPopup={openPopup} isOpen={isOpen} loggedIn={loggedIn} />
+        <Navigation
+          openPopup={openPopup}
+          isOpen={isOpen}
+          loggedIn={loggedIn}
+          signOut={signOut}
+        />
         <button
           className={
             isOpen

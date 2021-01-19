@@ -8,6 +8,8 @@ function NewsCardList({
   isShowMoreBtn,
   AddAndRemove,
   loggedIn,
+  savedArticles,
+  openPopup,
 }) {
   const { pathname } = useLocation();
 
@@ -31,6 +33,8 @@ function NewsCardList({
               key={index.toString()}
               AddAndRemove={AddAndRemove}
               loggedIn={loggedIn}
+              savedArticles={savedArticles}
+              openPopup={openPopup}
             />
           ))}
         </ul>

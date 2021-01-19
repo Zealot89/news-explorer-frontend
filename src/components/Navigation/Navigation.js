@@ -44,14 +44,18 @@ function Navigation({ openPopup, isOpen, loggedIn, signOut }) {
             Главная
           </Link>
         </li>
-        <li>
-          <Link
-            className={`header__nav-element ${colorClass} ${afterColorClass} ${afterArticlesInvisibleClass}`}
-            to="/saved-news"
-          >
-            Сохраненные статьи
-          </Link>
-        </li>
+        {loggedIn ? (
+          <li>
+            <Link
+              className={`header__nav-element ${colorClass} ${afterColorClass} ${afterArticlesInvisibleClass}`}
+              to="/saved-news"
+            >
+              Сохраненные статьи
+            </Link>
+          </li>
+        ) : (
+          <></>
+        )}
       </ul>
       <button
         className={`header__button ${colorClass} ${colorBorderClass}`}

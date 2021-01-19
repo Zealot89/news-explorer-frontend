@@ -8,11 +8,21 @@ function NewsCard({
   urlToImage,
   publishedAt,
   source,
-
+  savedArticles,
   keyword,
   loggedIn,
   AddAndRemove,
+  openPopup,
 }) {
+  const { pathname } = useLocation();
+
+  const noted =
+    pathname === "/" &&
+    loggedIn &&
+    savedArticles.some(
+      (item) => item.title === title && item.date === publishedAt
+    );
+
   const [authWarningTip, setAuthWarningTip] = React.useState(false);
   const article = {
     title: title,
@@ -25,15 +35,16 @@ function NewsCard({
     text: text,
   };
 
-  const { pathname } = useLocation();
-
   const handleAddAndRemove = () => {
     AddAndRemove(article);
   };
-
+  //
   const handleOnMouse = () => {
     setAuthWarningTip(!authWarningTip);
   };
+  const notedClass = `${
+    pathname === "/" && loggedIn && noted ? "newsCard__button_noted" : " "
+  }`;
 
   const invisibleClass = `${
     pathname === "/saved-news" ? "" : "newsCardList__invisible"
@@ -53,10 +64,14 @@ function NewsCard({
           Войдите, чтобы сохранять статьи
         </p>
         <button
-          className={`newsCard__button ${trashClass}`}
+          className={`newsCard__button ${trashClass} ${notedClass}`}
           type="button"
           onClick={() => {
-            loggedIn && handleAddAndRemove();
+            if (loggedIn) {
+              handleAddAndRemove();
+            } else {
+              openPopup();
+            }
           }}
           onMouseEnter={() => {
             !loggedIn && handleOnMouse();

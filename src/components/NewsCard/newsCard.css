@@ -10,6 +10,7 @@
 @import url("./__title/newsCard__title.css");
 @import url("./__tag/newsCard__tag.css");
 @import url("./__button/_trash/newsCard__button_trash.css");
+@import url("./__button/_noted/newsCard__button_noted.css");
 .newsCard {
   max-width: 400px;
   height: 100%;

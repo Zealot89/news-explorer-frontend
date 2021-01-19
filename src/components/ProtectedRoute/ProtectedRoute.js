@@ -6,6 +6,7 @@ export default function ProtectedRoute({
   secondComponent: SecondComponent,
   ...props
 }) {
+  if (!props.loggedIn) props.openPopup();
   return (
     <Route>
       {() =>
