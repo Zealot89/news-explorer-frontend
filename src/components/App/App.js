@@ -415,6 +415,7 @@ function App() {
           title={InfoTooltipData.text}
           linkText="Войти"
           onClick={handleAddPlaceClick}
+          loggedIn={loggedIn}
         />
       </div>
     </CurrentUserContext.Provider>
