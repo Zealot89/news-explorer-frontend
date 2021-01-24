@@ -1,9 +1,0 @@
-.about__container {
-  max-width: 600px;
-}
-@media all and (max-width: 562px) {
-  .about__container {
-    max-width: 272px;
-    height: 344px;
-  }
-}

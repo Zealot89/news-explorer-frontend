@@ -1,7 +1,0 @@
-.newsCard__button_trash {
-  background-image: url("../../../../images/trash.png");
-}
-.newsCard__button_trash:hover {
-  background-image: url("../../../../images/trash2.png");
-  cursor: url("../../../../images/Pointer.png"), pointer;
-}
