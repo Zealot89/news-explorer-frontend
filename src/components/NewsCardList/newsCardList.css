@@ -1,0 +1,13 @@
+@import url("./__button/newsCardList__button.css");
+@import url("./__title/newsCardList__title.css");
+@import url("./__list/newsCardList__list.css");
+@import url("./__invisible/newsCardList__invisible.css");
+.newsCardList {
+  width: 100%;
+  min-height: 374px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f6f7;
+  padding: 64px 0 64px 0;
+  box-sizing: border-box;
+}

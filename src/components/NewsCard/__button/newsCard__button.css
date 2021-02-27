@@ -1,0 +1,16 @@
+.newsCard__button {
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  background-image: url("../../../images/Rectangle 8.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.newsCard__button:hover {
+  background-image: url("../../../images/Rectangle8.jpg");
+  cursor: url("../../../images/Pointer.png"), pointer;
+}

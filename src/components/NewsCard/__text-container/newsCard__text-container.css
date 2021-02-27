@@ -1,0 +1,8 @@
+.newsCard__text-container {
+  padding: 16px 24px 24px 24px;
+  box-sizing: border-box;
+  background-color: white;
+  min-height: 295px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,29 @@
+.searchForm__button {
+  width: 168px;
+  height: 66px;
+  border-radius: 100px;
+  outline: none;
+  background-color: #2f71e5;
+  color: white;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+.searchForm__button:hover {
+  background: #347eff;
+  cursor: url("../../../images/Pointer.png"), pointer;
+}
+@media all and (max-width: 860px) {
+  .searchForm__button {
+    width: 250px;
+  }
+}
+@media all and (max-width: 562px) {
+  .searchForm__button {
+    width: 288px;
+    margin-top: 16px;
+  }
+}

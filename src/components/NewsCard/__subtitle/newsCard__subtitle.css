@@ -1,0 +1,21 @@
+.newsCard__subtitle {
+  margin: 0;
+  margin-bottom: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  width: 100%;
+  max-height: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+@media all and (max-width: 860px) {
+  .newsCard__subtitle {
+    max-height: 90px;
+  }
+}
